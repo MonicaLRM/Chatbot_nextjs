@@ -3,14 +3,14 @@ import { createClientMessage } from 'react-chatbot-kit';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const afterS = (message) => {
-    const botMessage = createChatBotMessage('Como te clasificas?', {
+    const botMessage = createChatBotMessage('Como te clasificas? \n\n Selecciona una opción:', {
       widget: 'CustomMessage',
     });
         // Actualiza el estado de 'pref' en el chatbot
         setState((prev) => ({
           ...prev,
           messages: [...prev.messages, botMessage],
-          num: 2,
+          num: 3,
 
         }));
   };
@@ -18,7 +18,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const General = (preference, opcion) => {
 
     if(opcion == "Estudiante"){
-      const botMessage = createChatBotMessage(`Estas son las opciones para ${opcion}`, {
+      const botMessage = createChatBotMessage(`Estas son las opciones para ${opcion}, \n Selecciona una:`, {
         widget: 'NumberContext',
       });
       setState((prev) => ({
@@ -29,7 +29,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       }));
     }
     else if(opcion == "Invitado"){
-      const botMessage = createChatBotMessage(`Estas son las opciones para ${opcion}`, {
+      const botMessage = createChatBotMessage(`Estas son las opciones para ${opcion}, \n Selecciona una:`, {
         widget: 'NumberContext',
       });
       setState((prev) => ({
@@ -162,7 +162,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   };
 
   const defaultop = (preference) => {
-    const botMessage = createChatBotMessage(`Que deseas saber?`, {
+    const botMessage = createChatBotMessage(`Que deseas saber?  \n\n Selecciona una opción:`, {
       widget: 'Categoria',
     });
 
@@ -178,14 +178,22 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const despedida = () => {
     const botMessage = createChatBotMessage('Fue un gusto resolver tus dudas, ¡Que tengas un buen día!', {
     });
-    updateChatbotState(botMessage, "fin");
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+      num: 4,
+    }));
   };
 
   const Estudiante = () => {
     const botMessage = createChatBotMessage('Digita tu número de carnet', {
       //widget: 'Estudiante',
     });
-    updateChatbotState(botMessage, "estu");
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+      num: 2,
+    }));
   };
 
    const Estu2 = (carnet) => {
