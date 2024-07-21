@@ -17,7 +17,6 @@ const MessageParser = ({ children, actions }) => {
       }
       else if(regex2.test(message)==false)
       {
-      
         actions.error(message);
       }
     }
@@ -30,16 +29,21 @@ const MessageParser = ({ children, actions }) => {
       }
       else if(regex.test(message)==false)
       {
+       
         actions.error(message);
       }
       
     }
-   /* if (message.includes('hello')) {
-      actions.handleHello();
+    if(num == 3){
+      actions.error(message);
+    }
+    
+    /*if (message.includes('Estudiante') && num==2) {
+      actions.General();
     }
 
-    if (message.includes('dog')) {
-      actions.handleDog();
+    if (message.includes('Invitado')&& num==2) {
+      actions.General();
     }*/
 
 
@@ -58,3 +62,4 @@ const MessageParser = ({ children, actions }) => {
 };
 
 export default MessageParser;
+
