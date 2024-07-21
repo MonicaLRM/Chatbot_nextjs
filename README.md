@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+INTEGRANTES DEL PROYECTO
 
-## Getting Started
+Aguilar Linares, José Carlos AL210841 DPS104 G01T
+Campos Monterroza, Carlos Fernando CM210153 DPS104 G01T
+Cruz Reyes, Christopher Amílcar CR211136 DPS104 G01T
+Rivera Mendoza, Mónica Lissette RM210852 DPS104 G01T
+Velasco Flores, Luis Pablo VF202313 DPS104 G01T
 
 First, run the development server:
 
