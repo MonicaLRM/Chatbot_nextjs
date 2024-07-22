@@ -1,21 +1,23 @@
 import React from 'react';
 import { createClientMessage } from 'react-chatbot-kit';
 
-const ActionProvider = ({ createChatBotMessage, setState, children }) => {
+//Esto crea los mensajes del chatbot
+
+const ActionProvider = ({ createChatBotMessage, setState, children }) => { //Se manda a llamar cuandos se ingresa el mensaje
   const afterS = (message) => {
     const botMessage = createChatBotMessage('Como te clasificas? \n\n Selecciona una opción:', {
-      widget: 'CustomMessage',
+      widget: 'CustomMessage', //Botones de la pregunta
     });
         // Actualiza el estado de 'pref' en el chatbot
         setState((prev) => ({
           ...prev,
           messages: [...prev.messages, botMessage],
-          num: 3,
+          num: 3, //Cambia la variable num
 
         }));
   };
 
-  const General = (preference, opcion) => {
+  const General = (preference, opcion) => { //Nueva pregunta
 
     if(opcion == "Estudiante"){
       const botMessage = createChatBotMessage(`Estas son las opciones para ${opcion}, \n Selecciona una:`, {
@@ -196,7 +198,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
-   const Estu2 = (carnet) => {
+   const Estu2 = (carnet) => { //Se manda a llamar luego de ingresar el carnet
     const botMessage = createChatBotMessage('carnet Ingresado...', {
       widget: 'Estudiante',
 
@@ -247,7 +249,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
-  return (
+  return ( //Muestras las funciones disponibles
     <div>
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {

@@ -39,7 +39,7 @@ export default function CustomMessage(props) {
   };
 
   
-  return (
+  return ( //Genera los botones con la funcion "onClick"
     <div className={styles.buttonContainer}>
       {buttonsState.btn1 && (
         <button className={styles.botonNormal} onClick={() => handlePreference("Estudiante","Estudiante") }>Estudiante</button>

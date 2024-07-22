@@ -9,17 +9,18 @@ import { act } from 'react';
 
 const botName = 'EduBot';
 
+//Configuraciones iniciales
 const config = {
   botName: botName,
-  initialMessages: [createChatBotMessage(`Hola! Soy ${botName}, cual es tu nombre?`)],
-  customComponents: {
+  initialMessages: [createChatBotMessage(`Hola! Soy ${botName}, cual es tu nombre?`)], //Mensaje que se muestra al principio
+  customComponents: { //Cosas del CCS
     header: () => (
       <div style={{ backgroundColor: '#efefef', padding: '10px', borderRadius: '3px',color: '#000000', fontFamily: 'sans-serif' }}>
         EduBot - Chatbot
       </div>
     ),
   },
-  customStyles: {
+  customStyles: { //Cosas del CCS
    
     botMessageBox: {
       backgroundColor: '#061161',
@@ -29,18 +30,18 @@ const config = {
     },
 
   },
-  state: {
+  state: { //Variables - Guarda el estado de lo que esté haciendo el usuario
     Lista,
-    pref: "",
+    pref: "", 
     num: 1,
     carnet: "",
 
   },
-  widgets: [
+  widgets: [ //Crea los botones que va seleccionando el usuario
     {
       widgetName: 'CustomMessage',
       widgetFunc: (props) => <CustomMessage {...props} />,
-      mapStateToProps: ["messages", "num"],
+      mapStateToProps: ["messages", "num"], //Son las variables de estado a las que puede acceder (Las que vemos en state)
     },
     {
       widgetName: 'NumberContext',

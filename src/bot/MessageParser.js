@@ -1,6 +1,9 @@
 import React from 'react';
 let i = 0;
 
+//Verifica que el usuario mande un mensaje
+//Cuando el usuario presiona enter, se viene para acá
+
 const MessageParser = ({ children, actions }) => {
   
   const parse = (message) => {
@@ -11,13 +14,13 @@ const MessageParser = ({ children, actions }) => {
 
     if(num == 1)
     {
-      if(regex2.test(message)==true)
+      if(regex2.test(message)==true) //Evalua el mensaje
       {
-        actions.afterS(message);
+        actions.afterS(message); //Mnada la constetacion del chatbot
       }
       else if(regex2.test(message)==false)
       {
-        actions.error(message);
+        actions.error(message); //Si no es valido, manda error
       }
     }
    if(num == 2)
